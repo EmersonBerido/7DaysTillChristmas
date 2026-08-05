@@ -1,0 +1,58 @@
+{
+    "version": 1,
+    "name": "Gameplay",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "c1902aa4-ccd4-4dec-8142-6d2d74e41011",
+            "actions": [
+                {
+                    "name": "Unwrap",
+                    "type": "Button",
+                    "id": "300459b2-e6b5-4ace-91b1-73692daf804d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "35e56327-5306-4fc9-9389-f321e719a0fc",
+                    "path": "<Pointer>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Standard",
+                    "action": "Unwrap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Standard",
+            "bindingGroup": "Standard",
+            "devices": [
+                {
+                    "devicePath": "<Pointer>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Mobile",
+            "bindingGroup": "Mobile",
+            "devices": [
+                {
+                    "devicePath": "<Touchscreen>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

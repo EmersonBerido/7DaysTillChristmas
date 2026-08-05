@@ -623,6 +623,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1491371798}
   - component: {fileID: 1491371797}
+  - component: {fileID: 1491371799}
+  - component: {fileID: 1491371800}
   m_Layer: 0
   m_Name: Kid
   m_TagString: Untagged
@@ -704,6 +706,94 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1491371799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491371796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6177ac494ec278846971d63363297678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
+  present: {fileID: 1984401300}
+  presentActivePosition: {x: -2, y: -2.23}
+  MaxPresentHealth: 100
+  unwrapSpeed: 3
+  playerHands: {fileID: 657934115}
+  unwrapAction: {fileID: -2335465733449111515, guid: 68ae27928e06fcd44b0c331e0489d23a, type: 3}
+  activeSprite: {fileID: 21300000, guid: 7e0d9a0ddd0e07f43a44836697453690, type: 3}
+  idleSprite: {fileID: 21300000, guid: 2dc89670fbf4f7c40babcd4a175614fa, type: 3}
+--- !u!114 &1491371800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491371796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd48a7b295a12d4fbfbda6280f2bfe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PresentUI
+  uiDocument: {fileID: 1723315084}
+--- !u!1 &1723315083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1723315085}
+  - component: {fileID: 1723315084}
+  m_Layer: 5
+  m_Name: HUD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1723315084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723315083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
+  m_PanelSettings: {fileID: 11400000, guid: 4f14f01140961534785d66d1dd787440, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: fcae11522ff25d0468837a70c6ad08c2, type: 3}
+  m_SortingOrder: 0
+  m_Position: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+  m_PivotReferenceSize: 0
+  m_Pivot: 0
+  m_WorldSpaceCollider: {fileID: 0}
+--- !u!4 &1723315085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723315083}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1984401300
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,7 +858,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8753230497254714628, guid: e9febaddc104d15409908ec1edf13ec7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -789,7 +879,7 @@ Transform:
   m_GameObject: {fileID: 1984401300}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.67, y: -3.99, z: 0}
+  m_LocalPosition: {x: 1.58, y: -3.9, z: 0}
   m_LocalScale: {x: 2.2198, y: 2.2198, z: 2.2198}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -806,3 +896,4 @@ SceneRoots:
   - {fileID: 1491371798}
   - {fileID: 657934117}
   - {fileID: 1984401302}
+  - {fileID: 1723315085}

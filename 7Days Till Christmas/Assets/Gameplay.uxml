@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Panel" style="flex-grow: 1; height: 20%; max-height: 10%; align-items: center; justify-content: center;">
+        <ui:VisualElement name="Container" style="flex-grow: 1; flex-direction: row; width: 100%; padding-top: 2%; padding-right: 9%; padding-bottom: 1%; padding-left: 9%;">
+            <ui:VisualElement name="Bar" style="flex-grow: 0; background-color: rgb(217, 87, 99); border-top-left-radius: 14px; border-top-right-radius: 14px; border-bottom-right-radius: 14px; border-bottom-left-radius: 14px; width: 131%; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; align-items: center; justify-content: flex-start;">
+                <ui:Image source="project://database/Assets/Sprites/present.png?fileID=-8753230497254714628&amp;guid=e9febaddc104d15409908ec1edf13ec7&amp;type=3#present_0" style="position: absolute; height: 129%; right: 0; translate: 40% -20%; aspect-ratio: 1;"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
