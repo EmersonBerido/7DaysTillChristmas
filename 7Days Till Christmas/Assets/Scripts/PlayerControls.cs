@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PresentUI))]
 public class PlayerControls : MonoBehaviour
 {
+    public static PlayerControls Instance { get; private set; }
+
     [Header("Present Variables")]
     [SerializeField] private GameObject present;
     [SerializeField] private Vector2 presentActivePosition;
@@ -28,6 +30,18 @@ public class PlayerControls : MonoBehaviour
 
     void OnDisable() =>
         unwrapAction.action.Disable();
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     void Start()
     {
@@ -90,5 +104,7 @@ public class PlayerControls : MonoBehaviour
         currSprite = newSprite;
         GetComponent<SpriteRenderer>().sprite = currSprite;
     }
+
+    public bool IsUnwrapping() => isUnwrapping;
         
 }

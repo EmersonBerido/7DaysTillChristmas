@@ -18,8 +18,6 @@ public class PresentUI : MonoBehaviour
 
         if (healthPercentage < 0f) healthPercentage = 0f;
         Bar.style.width = new Length(healthPercentage, LengthUnit.Percent);
-        Debug.Log($"Updating bar with health percentage: {healthPercentage}");
-        Debug.Log($"Bar width set to: {Bar.style.width.value}");
         
     }
 
