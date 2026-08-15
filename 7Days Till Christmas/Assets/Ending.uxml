@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Panel" style="flex-grow: 1; align-items: center; justify-content: center; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Abaddon%20Bold.ttf?fileID=12800000&amp;guid=28b067f6256ccee42a9df9630d492cb0&amp;type=3#Abaddon Bold&quot;); background-color: rgb(140, 111, 49);">
+        <ui:Label text="CAUGHT &amp; ON TIMEOUT" name="TimeOut" style="margin-bottom: 2%; font-size: 77%; -unity-text-align: middle-center; white-space: pre-wrap; color: rgb(88, 33, 33); width: 84%;"/>
+        <ui:Label text="OPENED N PRESENTS BEFORE MOM CAUGHT ON" name="Text" style="color: rgb(42, 72, 15); font-size: 29%; white-space: pre-wrap; width: 87%;"/>
+    </ui:VisualElement>
+</ui:UXML>

@@ -21,6 +21,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private Sprite activeSprite;
     [SerializeField] private Sprite idleSprite;
     private Sprite currSprite;
+    private int presentsUnwrapped = 0;
     
     private bool isUnwrapping = false;
 
@@ -76,7 +77,11 @@ public class PlayerControls : MonoBehaviour
         presentUI.UpdateBar(currentPresentHealth / MaxPresentHealth * 100f);
 
         if (currentPresentHealth <= 0)
+        {
+            presentsUnwrapped += 1;
+            PlayerPrefs.SetInt("presents", presentsUnwrapped);
             ResetPresent();
+        }
     }
 
     private void StopUnwrapping()

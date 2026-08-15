@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Mom : MonoBehaviour
@@ -77,6 +78,7 @@ public class Mom : MonoBehaviour
         UpdateSprite(angrySprite, gameObject);
         Debug.Log("Mom angry. you lost");
         yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Ending");
     }
 
     private IEnumerator CheckKid()
@@ -89,7 +91,7 @@ public class Mom : MonoBehaviour
         
             // start routine
             float selected = Random.Range(0, 1f);
-            if (selected < 0.9f)
+            if (selected < 0.2f)
                 yield return StartCoroutine(DogCheck());
             else 
                 yield return StartCoroutine(RegularCheck());

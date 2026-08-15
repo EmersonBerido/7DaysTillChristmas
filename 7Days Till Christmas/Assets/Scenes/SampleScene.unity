@@ -575,7 +575,7 @@ MonoBehaviour:
   activeDogSprite: {fileID: 9118213209582376027, guid: 5ecde49300999b8488a962ad89d903b2, type: 3}
   dogBark: {fileID: 0}
   dogSpeed: 2.3
-  dogDuration: 1
+  barkDuration: 1
   timeTillBark: 3
   angerIntervalMin: 2
   angerIntervalMax: 10
@@ -782,7 +782,7 @@ MonoBehaviour:
   present: {fileID: 1984401300}
   presentActivePosition: {x: -2, y: -2.23}
   MaxPresentHealth: 100
-  unwrapSpeed: 3
+  unwrapSpeed: 5.62
   playerHands: {fileID: 1885582241}
   unwrapAction: {fileID: -2335465733449111515, guid: 68ae27928e06fcd44b0c331e0489d23a, type: 3}
   activeSprite: {fileID: 21300000, guid: 7e0d9a0ddd0e07f43a44836697453690, type: 3}
