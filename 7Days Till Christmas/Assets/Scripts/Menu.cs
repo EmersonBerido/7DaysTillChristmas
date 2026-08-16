@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -5,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     [SerializeField] InputActionReference startAction;
+    [SerializeField] AudioSource startSFX;
 
     void OnEnable()
     {
@@ -20,8 +22,16 @@ public class Menu : MonoBehaviour
         startAction.action.canceled -= StartGame;
     }
 
-  void StartGame(InputAction.CallbackContext ctx)
-        => SceneManager.LoadScene(1);
+    void StartGame(InputAction.CallbackContext ctx)
+    {
+        StartCoroutine(LoadGame());
+    }
+    IEnumerator LoadGame()
+    {
+        startSFX.Play();
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(1);
+    }
 
     
 

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PresentUI))]
+[RequireComponent(typeof(AudioSource))]
 public class PlayerControls : MonoBehaviour
 {
     public static PlayerControls Instance { get; private set; }
@@ -24,6 +25,7 @@ public class PlayerControls : MonoBehaviour
     private int presentsUnwrapped = 0;
     
     private bool isUnwrapping = false;
+    private AudioSource audioSource;
 
 
     void OnEnable() =>
@@ -50,6 +52,8 @@ public class PlayerControls : MonoBehaviour
         currentPresentHealth = MaxPresentHealth;
         presentUI = GetComponent<PresentUI>();
         currSprite = idleSprite;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.mute = true;
     }
 
     void Update()
@@ -69,6 +73,7 @@ public class PlayerControls : MonoBehaviour
         {
             isUnwrapping = true;
             playerHands.SetActive(true);
+            audioSource.mute = false;
             UpdateSprite(activeSprite);
         }
         
@@ -89,6 +94,7 @@ public class PlayerControls : MonoBehaviour
         if (!isUnwrapping) return;
         isUnwrapping = false;
         playerHands.SetActive(false);
+        audioSource.mute = true;
         present.transform.position = presentInactivePosition;
         UpdateSprite(idleSprite);
     }

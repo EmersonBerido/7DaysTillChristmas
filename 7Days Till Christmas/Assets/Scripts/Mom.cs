@@ -16,20 +16,21 @@ public class Mom : MonoBehaviour
     private Vector2 dogStartPosition;
     [SerializeField] private Sprite idleDogSprite;
     [SerializeField] private Sprite activeDogSprite;
-    [SerializeField] private AudioClip dogBark;
+    [SerializeField] private AudioSource dogBark;
     [SerializeField] private float dogSpeed = 1f;
     [SerializeField] private float barkDuration = 1f;
     [SerializeField] private float timeTillBark = 5f;
     private bool moveDog = false;
     private bool dogAtEnd = false;
 
-    [Header("Timing Variables")]
+    [Header("Mom Variables")]
     [SerializeField] private float angerIntervalMin = 2f;
     [SerializeField] private float angerIntervalMax = 10f;
     [SerializeField] private float angerDurationMin = 3f;
     [SerializeField] private float angerDurationMax = 6f;
     [SerializeField] private float angerWarning = 1f;
     [SerializeField] private float gracePeriod = 1f;
+    [SerializeField] private AudioSource scream;
     private bool isWatching = false;
     private bool isCaught = false;
 
@@ -77,7 +78,8 @@ public class Mom : MonoBehaviour
         isCaught = true;
         UpdateSprite(angrySprite, gameObject);
         Debug.Log("Mom angry. you lost");
-        yield return new WaitForSeconds(1f);
+        scream.Play();
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("Ending");
     }
 
@@ -91,7 +93,7 @@ public class Mom : MonoBehaviour
         
             // start routine
             float selected = Random.Range(0, 1f);
-            if (selected < 0.2f)
+            if (selected < 0.9f)
                 yield return StartCoroutine(DogCheck());
             else 
                 yield return StartCoroutine(RegularCheck());
@@ -140,8 +142,9 @@ public class Mom : MonoBehaviour
         // bark for duration
         UpdateSprite(activeDogSprite, dog);
         moveDog = false;
-        // AudioSource.PlayClipAtPoint(dogBark, dog.transform.position);
+        dogBark.Play();
         yield return new WaitForSeconds(barkDuration);
+        dogBark.Stop();
         UpdateSprite(idleDogSprite, dog);
         Debug.LogWarning("Dog bark sound here");
 
