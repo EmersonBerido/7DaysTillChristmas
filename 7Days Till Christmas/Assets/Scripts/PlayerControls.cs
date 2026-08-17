@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private float MaxPresentHealth = 100f;
     private float currentPresentHealth;
     private PresentUI presentUI;
+    [SerializeField] private List<Sprite> presents;
 
     [Header("Player Variables")]
     [SerializeField] private float unwrapSpeed;
@@ -54,6 +56,8 @@ public class PlayerControls : MonoBehaviour
         currSprite = idleSprite;
         audioSource = GetComponent<AudioSource>();
         audioSource.mute = true;
+        playerHands.SetActive(false);
+
     }
 
     void Update()
@@ -107,7 +111,7 @@ public class PlayerControls : MonoBehaviour
         presentUI.ResetBar();
 
         // Select new present image
-        Debug.LogWarning("Need new present image");
+        present.GetComponent<SpriteRenderer>().sprite = ChoosePresent();
     }
 
     private void UpdateSprite(Sprite newSprite)
@@ -117,5 +121,11 @@ public class PlayerControls : MonoBehaviour
     }
 
     public bool IsUnwrapping() => isUnwrapping;
+
+    private Sprite ChoosePresent()
+    {
+        int idx = Random.Range(0,presents.Count);
+        return presents[idx];
+    }
         
 }

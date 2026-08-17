@@ -77,7 +77,6 @@ public class Mom : MonoBehaviour
         // GameOver
         isCaught = true;
         UpdateSprite(angrySprite, gameObject);
-        Debug.Log("Mom angry. you lost");
         scream.Play();
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("Ending");
@@ -93,7 +92,7 @@ public class Mom : MonoBehaviour
         
             // start routine
             float selected = Random.Range(0, 1f);
-            if (selected < 0.9f)
+            if (selected < 0.25f)
                 yield return StartCoroutine(DogCheck());
             else 
                 yield return StartCoroutine(RegularCheck());
@@ -108,9 +107,7 @@ public class Mom : MonoBehaviour
         float warning = Random.Range(0, 1f);
         if (warning < 0.5f)
         {
-            Debug.Log("This is a warning");
             yield return new WaitForSeconds(angerWarning);
-            Debug.LogWarning("Add Exlamation Mark to Mom Sprite");
         }
 
         // decide how long to be angry
@@ -122,7 +119,6 @@ public class Mom : MonoBehaviour
         // decide duration
         float duration = Random.Range(angerDurationMin, angerDurationMax);
         UpdateSprite(activeSprite, gameObject);
-        Debug.Log("About to check!");
 
         yield return new WaitForSeconds(gracePeriod);
         isWatching = true;
@@ -146,7 +142,6 @@ public class Mom : MonoBehaviour
         yield return new WaitForSeconds(barkDuration);
         dogBark.Stop();
         UpdateSprite(idleDogSprite, dog);
-        Debug.LogWarning("Dog bark sound here");
 
         // enable mom to check
         yield return StartCoroutine(MomCheck());
